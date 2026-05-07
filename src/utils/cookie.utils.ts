@@ -3,11 +3,13 @@ import { env } from '@config/env';
 import { COOKIE_NAMES } from '@constants/app.constants';
 
 const isProduction = env.NODE_ENV === 'production';
+const sameSite = isProduction ? env.COOKIE_SAME_SITE : 'lax';
 
 export const cookieOptions = {
   httpOnly: true,
-  secure: isProduction,
-  sameSite: (isProduction ? 'strict' : 'lax') as 'strict' | 'lax',
+  secure: isProduction || sameSite === 'none',
+  sameSite,
+  ...(env.COOKIE_DOMAIN ? { domain: env.COOKIE_DOMAIN } : {}),
   path: '/',
 };
 

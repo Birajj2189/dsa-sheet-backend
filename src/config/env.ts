@@ -17,6 +17,9 @@ const envSchema = z.object({
 
   BCRYPT_SALT_ROUNDS: z.string().default('12').transform(Number),
 
+  COOKIE_SAME_SITE: z.enum(['lax', 'strict', 'none']).default('lax'),
+  COOKIE_DOMAIN: z.string().optional(),
+
   RATE_LIMIT_ENABLED: z
     .string()
     .default('true')
