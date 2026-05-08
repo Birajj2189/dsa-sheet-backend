@@ -11,6 +11,7 @@ module.exports = {
       max_memory_restart: '300M',
       env: {
         NODE_ENV: 'production',
+        TS_NODE_BASEURL: './dist',
       },
       error_file: './logs/pm2-error.log',
       out_file: './logs/pm2-out.log',

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --config nodemon.json",
     "build": "tsc --project tsconfig.json",
-    "start": "node -r tsconfig-paths/register dist/server.js",
+    "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register dist/server.js",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "format": "prettier --write \"src/**/*.ts\"",
