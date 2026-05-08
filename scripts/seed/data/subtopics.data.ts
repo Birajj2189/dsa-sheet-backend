@@ -1,4 +1,12 @@
-export const subtopicsData: Record<string, { title: string; slug: string; description: string; order: number }[]> = {
+export interface SubtopicSeed {
+  title: string;
+  slug: string;
+  description: string;
+  articleLink?: string;
+  order: number;
+}
+
+export const subtopicsData: Record<string, SubtopicSeed[]> = {
   arrays: [
     { title: 'Two Pointers', slug: 'two-pointers', description: 'Solve problems using two pointer technique', order: 1 },
     { title: 'Sliding Window', slug: 'sliding-window', description: 'Fixed and variable size sliding window patterns', order: 2 },

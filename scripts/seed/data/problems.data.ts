@@ -7,6 +7,7 @@ export interface ProblemSeed {
   tags: string[];
   estimatedTime: number;
   leetcodeLink?: string;
+  articleLink?: string;
   youtubeLink?: string;
   description?: string;
   order: number;

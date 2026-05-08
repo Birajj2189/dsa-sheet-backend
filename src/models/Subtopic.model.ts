@@ -5,6 +5,7 @@ export interface ISubtopicFields {
   slug: string;
   topicId: Types.ObjectId;
   description?: string;
+  articleLink?: string;
   order: number;
 }
 
@@ -34,6 +35,7 @@ const subtopicSchema = new Schema<ISubtopicDocument, Model<ISubtopicDocument>>(
       trim: true,
       maxlength: [300, 'Description cannot exceed 300 characters'],
     },
+    articleLink: { type: String, trim: true },
     order: {
       type: Number,
       required: [true, 'Order is required'],

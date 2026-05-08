@@ -75,6 +75,7 @@ async function seedProblemsAndSubtopics(): Promise<void> {
       tags: p.tags,
       estimatedTime: p.estimatedTime,
       ...(p.leetcodeLink ? { leetcodeLink: p.leetcodeLink } : {}),
+      ...(p.articleLink ? { articleLink: p.articleLink } : {}),
       ...(p.youtubeLink ? { youtubeLink: p.youtubeLink } : {}),
       ...(p.description ? { description: p.description } : {}),
       order: p.order,
