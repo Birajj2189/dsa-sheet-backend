@@ -3,15 +3,16 @@ module.exports = {
     {
       name: 'dsa-sheet-api',
       script: 'dist/server.js',
-      node_args: '-r tsconfig-paths/register',
       instances: 1,
       exec_mode: 'fork',
       watch: false,
       autorestart: true,
       max_memory_restart: '300M',
       env: {
+        NODE_ENV: 'development',
+      },
+      env_production: {
         NODE_ENV: 'production',
-        TS_NODE_BASEURL: './dist',
       },
       error_file: './logs/pm2-error.log',
       out_file: './logs/pm2-out.log',
